@@ -28,7 +28,7 @@ polling_and_results <- polling_and_results %>%
 
 # Now a simple linear regression: are polls usually related to results?
 
-simple_reg <- lm(rep_lead ~ rep_lead_actual, polling_and_results)
+simple_reg <- lm(rep_lead_actual ~ rep_lead, polling_and_results)
 
 summary(simple_reg)
 
@@ -108,4 +108,5 @@ ggplot(polling_for_lpm, aes(x = rep_lead, y = rep_won)) +
 
 # It looks like our previous estimate was very poor. Between a lead of 0 and a
 # lead of 10, we should move from 50% odds to 99% odds. So the better rule of
+
 # thumb isn't 2.4 points, but 5!
